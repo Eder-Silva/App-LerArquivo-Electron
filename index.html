@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <button id="btn">Open File</button>
+  </body>
+
+  <script>
+    const { ipcRenderer } = require("electron");
+
+    document.querySelector("#btn").addEventListener("click", (event) => {
+      //inibir o comportamento padrão de envio do formulário
+      event.preventDefault();
+      //recuperar o caminho da imagem
+      //const { path } = document.querySelector('#btn').value;
+      //enviando as informações da imagem para o index.js(electron)
+      //ou seja, envia um evento para o processo principal
+      ipcRenderer.send("teste");
+    });
+  </script>
+</html>
