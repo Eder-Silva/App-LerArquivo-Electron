@@ -1,7 +1,5 @@
-//carregar a biblioteca(módulo) electron
-const electron = require("electron");
 const fs = require("fs");
-const { app, ipcMain, dialog } = electron;
+const { app, ipcMain, dialog } = require("electron");
 
 function ipcOn(mainWindow) {
   this.mainWindow = mainWindow;

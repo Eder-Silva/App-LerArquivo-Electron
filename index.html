@@ -8,17 +8,6 @@
     <button id="btn">Open File</button>
   </body>
 
-  <script>
-    const { ipcRenderer } = require("electron");
-
-    document.querySelector("#btn").addEventListener("click", (event) => {
-      //inibir o comportamento padrão de envio do formulário
-      event.preventDefault();
-      //recuperar o caminho da imagem
-      //const { path } = document.querySelector('#btn').value;
-      //enviando as informações da imagem para o index.js(electron)
-      //ou seja, envia um evento para o processo principal
-      ipcRenderer.send("teste");
-    });
-  </script>
+  <!-- frontend.js chama a função do ipc ipcRenderer-->
+  <script src="./public/javascript/frontend/frontend.js"></script>
 </html>
