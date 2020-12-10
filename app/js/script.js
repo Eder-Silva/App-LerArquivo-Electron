@@ -14,7 +14,27 @@ function ipcOn(mainWindow) {
 
     fs.readFile(caminho.toString(), { encoding: "utf-8" }, (erro, dados) => {
       if (erro) console.log("Aconteceu um erro!");
-      else console.log(dados);
+      else {
+        const options = {
+          type: "info",
+          buttons: ["Cancelar", "Confirmar"],
+          defaultId: 2,
+          title: "Informações do arquivo",
+          message: dados,
+          //sidetail: 'It does not really matter',
+          checkboxLabel: "Remember my answer",
+          checkboxChecked: true,
+        };
+
+        let resposta = dialog.showMessageBox(
+          null,
+          options,
+          (response, checkboxChecked) => {
+            console.log(response);
+            console.log(checkboxChecked);
+          }
+        );
+      }
     });
   });
 }
